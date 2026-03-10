@@ -362,3 +362,16 @@ stack.info*
 
 !ready-to-run/*
 
+# Synthesis artifacts (pd/synth/)
+pd/synth/work/
+pd/synth/alib_cache/
+pd/synth/XSTop_xs/
+pd/synth/*.svf
+pd/synth/*.log
+pd/synth/Flist.*
+pd/synth/default.svf
+pd/synth/*_LIB/
+# FakeRAM macro files (generated, large)
+pd/synth/fakeram7_*.db
+pd/synth/fakeram7_*.v
+

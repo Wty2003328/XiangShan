@@ -1,0 +1,217 @@
+ 
+                             Library Compiler (TM)
+                                 DesignWare (R)
+
+                Version V-2023.12-SP3 for linux64 - Apr 23, 2024
+  This release has significant feature enhancements. Please review the Release
+                       Notes associated with this release.
+
+                    Copyright (c) 1988 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Initializing...
+# lc_shell script to compile XiangShan SRAM .lib files to .db format
+# Run from VM: /soft/synopsys/lc/V-2023.12-SP3/bin/lc_shell -f /mnt/spr8nfs/FakeRAM2.0_xs/compile_xs_libs.tcl
+set results_dir /mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan
+/mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan
+set output_dir  /mnt/spr8nfs/XiangShan/pd/synth
+/mnt/spr8nfs/XiangShan/pd/synth
+foreach lib {
+    fakeram7_8192x64
+    fakeram7_1024x160
+    fakeram7_1024x56
+    fakeram7_1024x7
+    fakeram7_512x308
+    fakeram7_256x24
+    fakeram7_256x16
+    fakeram7_128x230
+    fakeram7_128x100
+    fakeram7_128x50
+    fakeram7_128x40
+    fakeram7_64x192
+    fakeram7_64x64
+} {
+    set lib_file ${results_dir}/${lib}/${lib}.lib
+    set db_file  ${output_dir}/${lib}.db
+    if {[file exists ${lib_file}]} {
+        puts "RM-Info: Compiling ${lib_file} -> ${db_file}"
+        read_lib ${lib_file}
+        write_lib ${lib} -format db -output ${db_file}
+        puts "RM-Info: Done: ${db_file}"
+    } else {
+        puts "RM-Warning: ${lib_file} not found, skipping."
+    }
+}
+RM-Info: Compiling /mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_8192x64/fakeram7_8192x64.lib -> /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_8192x64.db
+Reading '/mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_8192x64/fakeram7_8192x64.lib' ...
+Warning: Line 31, The attribute 'default_input_pin_cap' has already been specified for 'library' at line 29. Using the last definition encountered. (LBDB-261w)
+Warning: Line 1, The 'internal_power_calculation' attribute in char_config group is required for NLPM library. 
+        No default can be applied to this attribute. (LBDB-366)
+Information: Line 90, Cell 'fakeram7_8192x64', The cell 'fakeram7_8192x64' contiains memory/memory_read/memory_write groups which are deprecated, use the is_memory_cell attribute instead. (LIBG-280)
+Technology library 'fakeram7_8192x64' read successfully
+Wrote the 'fakeram7_8192x64' library to '/mnt/spr8nfs/XiangShan/pd/synth/fakeram7_8192x64.db' successfully
+RM-Info: Done: /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_8192x64.db
+RM-Info: Compiling /mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_1024x160/fakeram7_1024x160.lib -> /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_1024x160.db
+Reading '/mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_1024x160/fakeram7_1024x160.lib' ...
+Warning: Line 31, The attribute 'default_input_pin_cap' has already been specified for 'library' at line 29. Using the last definition encountered. (LBDB-261w)
+Warning: Line 1, The 'internal_power_calculation' attribute in char_config group is required for NLPM library. 
+        No default can be applied to this attribute. (LBDB-366)
+Information: Line 90, Cell 'fakeram7_1024x160', The cell 'fakeram7_1024x160' contiains memory/memory_read/memory_write groups which are deprecated, use the is_memory_cell attribute instead. (LIBG-280)
+Technology library 'fakeram7_1024x160' read successfully
+Wrote the 'fakeram7_1024x160' library to '/mnt/spr8nfs/XiangShan/pd/synth/fakeram7_1024x160.db' successfully
+RM-Info: Done: /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_1024x160.db
+RM-Info: Compiling /mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_1024x56/fakeram7_1024x56.lib -> /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_1024x56.db
+Reading '/mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_1024x56/fakeram7_1024x56.lib' ...
+Warning: Line 31, The attribute 'default_input_pin_cap' has already been specified for 'library' at line 29. Using the last definition encountered. (LBDB-261w)
+Warning: Line 1, The 'internal_power_calculation' attribute in char_config group is required for NLPM library. 
+        No default can be applied to this attribute. (LBDB-366)
+Information: Line 90, Cell 'fakeram7_1024x56', The cell 'fakeram7_1024x56' contiains memory/memory_read/memory_write groups which are deprecated, use the is_memory_cell attribute instead. (LIBG-280)
+Technology library 'fakeram7_1024x56' read successfully
+Wrote the 'fakeram7_1024x56' library to '/mnt/spr8nfs/XiangShan/pd/synth/fakeram7_1024x56.db' successfully
+RM-Info: Done: /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_1024x56.db
+RM-Info: Compiling /mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_1024x7/fakeram7_1024x7.lib -> /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_1024x7.db
+Reading '/mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_1024x7/fakeram7_1024x7.lib' ...
+Warning: Line 31, The attribute 'default_input_pin_cap' has already been specified for 'library' at line 29. Using the last definition encountered. (LBDB-261w)
+Warning: Line 1, The 'internal_power_calculation' attribute in char_config group is required for NLPM library. 
+        No default can be applied to this attribute. (LBDB-366)
+Information: Line 90, Cell 'fakeram7_1024x7', The cell 'fakeram7_1024x7' contiains memory/memory_read/memory_write groups which are deprecated, use the is_memory_cell attribute instead. (LIBG-280)
+Technology library 'fakeram7_1024x7' read successfully
+Wrote the 'fakeram7_1024x7' library to '/mnt/spr8nfs/XiangShan/pd/synth/fakeram7_1024x7.db' successfully
+RM-Info: Done: /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_1024x7.db
+RM-Info: Compiling /mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_512x308/fakeram7_512x308.lib -> /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_512x308.db
+Reading '/mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_512x308/fakeram7_512x308.lib' ...
+Warning: Line 31, The attribute 'default_input_pin_cap' has already been specified for 'library' at line 29. Using the last definition encountered. (LBDB-261w)
+Warning: Line 1, The 'internal_power_calculation' attribute in char_config group is required for NLPM library. 
+        No default can be applied to this attribute. (LBDB-366)
+Information: Line 90, Cell 'fakeram7_512x308', The cell 'fakeram7_512x308' contiains memory/memory_read/memory_write groups which are deprecated, use the is_memory_cell attribute instead. (LIBG-280)
+Technology library 'fakeram7_512x308' read successfully
+Wrote the 'fakeram7_512x308' library to '/mnt/spr8nfs/XiangShan/pd/synth/fakeram7_512x308.db' successfully
+RM-Info: Done: /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_512x308.db
+RM-Info: Compiling /mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_256x24/fakeram7_256x24.lib -> /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_256x24.db
+Reading '/mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_256x24/fakeram7_256x24.lib' ...
+Warning: Line 31, The attribute 'default_input_pin_cap' has already been specified for 'library' at line 29. Using the last definition encountered. (LBDB-261w)
+Warning: Line 1, The 'internal_power_calculation' attribute in char_config group is required for NLPM library. 
+        No default can be applied to this attribute. (LBDB-366)
+Information: Line 90, Cell 'fakeram7_256x24', The cell 'fakeram7_256x24' contiains memory/memory_read/memory_write groups which are deprecated, use the is_memory_cell attribute instead. (LIBG-280)
+Technology library 'fakeram7_256x24' read successfully
+Wrote the 'fakeram7_256x24' library to '/mnt/spr8nfs/XiangShan/pd/synth/fakeram7_256x24.db' successfully
+RM-Info: Done: /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_256x24.db
+RM-Info: Compiling /mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_256x16/fakeram7_256x16.lib -> /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_256x16.db
+Reading '/mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_256x16/fakeram7_256x16.lib' ...
+Warning: Line 31, The attribute 'default_input_pin_cap' has already been specified for 'library' at line 29. Using the last definition encountered. (LBDB-261w)
+Warning: Line 1, The 'internal_power_calculation' attribute in char_config group is required for NLPM library. 
+        No default can be applied to this attribute. (LBDB-366)
+Information: Line 90, Cell 'fakeram7_256x16', The cell 'fakeram7_256x16' contiains memory/memory_read/memory_write groups which are deprecated, use the is_memory_cell attribute instead. (LIBG-280)
+Technology library 'fakeram7_256x16' read successfully
+Wrote the 'fakeram7_256x16' library to '/mnt/spr8nfs/XiangShan/pd/synth/fakeram7_256x16.db' successfully
+RM-Info: Done: /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_256x16.db
+RM-Info: Compiling /mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_128x230/fakeram7_128x230.lib -> /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_128x230.db
+Reading '/mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_128x230/fakeram7_128x230.lib' ...
+Warning: Line 31, The attribute 'default_input_pin_cap' has already been specified for 'library' at line 29. Using the last definition encountered. (LBDB-261w)
+Warning: Line 1, The 'internal_power_calculation' attribute in char_config group is required for NLPM library. 
+        No default can be applied to this attribute. (LBDB-366)
+Information: Line 90, Cell 'fakeram7_128x230', The cell 'fakeram7_128x230' contiains memory/memory_read/memory_write groups which are deprecated, use the is_memory_cell attribute instead. (LIBG-280)
+Technology library 'fakeram7_128x230' read successfully
+Wrote the 'fakeram7_128x230' library to '/mnt/spr8nfs/XiangShan/pd/synth/fakeram7_128x230.db' successfully
+RM-Info: Done: /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_128x230.db
+RM-Info: Compiling /mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_128x100/fakeram7_128x100.lib -> /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_128x100.db
+Reading '/mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_128x100/fakeram7_128x100.lib' ...
+Warning: Line 31, The attribute 'default_input_pin_cap' has already been specified for 'library' at line 29. Using the last definition encountered. (LBDB-261w)
+Warning: Line 1, The 'internal_power_calculation' attribute in char_config group is required for NLPM library. 
+        No default can be applied to this attribute. (LBDB-366)
+Information: Line 90, Cell 'fakeram7_128x100', The cell 'fakeram7_128x100' contiains memory/memory_read/memory_write groups which are deprecated, use the is_memory_cell attribute instead. (LIBG-280)
+Technology library 'fakeram7_128x100' read successfully
+Wrote the 'fakeram7_128x100' library to '/mnt/spr8nfs/XiangShan/pd/synth/fakeram7_128x100.db' successfully
+RM-Info: Done: /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_128x100.db
+RM-Info: Compiling /mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_128x50/fakeram7_128x50.lib -> /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_128x50.db
+Reading '/mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_128x50/fakeram7_128x50.lib' ...
+Warning: Line 31, The attribute 'default_input_pin_cap' has already been specified for 'library' at line 29. Using the last definition encountered. (LBDB-261w)
+Warning: Line 1, The 'internal_power_calculation' attribute in char_config group is required for NLPM library. 
+        No default can be applied to this attribute. (LBDB-366)
+Information: Line 90, Cell 'fakeram7_128x50', The cell 'fakeram7_128x50' contiains memory/memory_read/memory_write groups which are deprecated, use the is_memory_cell attribute instead. (LIBG-280)
+Technology library 'fakeram7_128x50' read successfully
+Wrote the 'fakeram7_128x50' library to '/mnt/spr8nfs/XiangShan/pd/synth/fakeram7_128x50.db' successfully
+RM-Info: Done: /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_128x50.db
+RM-Info: Compiling /mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_128x40/fakeram7_128x40.lib -> /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_128x40.db
+Reading '/mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_128x40/fakeram7_128x40.lib' ...
+Warning: Line 31, The attribute 'default_input_pin_cap' has already been specified for 'library' at line 29. Using the last definition encountered. (LBDB-261w)
+Warning: Line 1, The 'internal_power_calculation' attribute in char_config group is required for NLPM library. 
+        No default can be applied to this attribute. (LBDB-366)
+Information: Line 90, Cell 'fakeram7_128x40', The cell 'fakeram7_128x40' contiains memory/memory_read/memory_write groups which are deprecated, use the is_memory_cell attribute instead. (LIBG-280)
+Technology library 'fakeram7_128x40' read successfully
+Wrote the 'fakeram7_128x40' library to '/mnt/spr8nfs/XiangShan/pd/synth/fakeram7_128x40.db' successfully
+RM-Info: Done: /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_128x40.db
+RM-Info: Compiling /mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_64x192/fakeram7_64x192.lib -> /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_64x192.db
+Reading '/mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_64x192/fakeram7_64x192.lib' ...
+Warning: Line 31, The attribute 'default_input_pin_cap' has already been specified for 'library' at line 29. Using the last definition encountered. (LBDB-261w)
+Warning: Line 1, The 'internal_power_calculation' attribute in char_config group is required for NLPM library. 
+        No default can be applied to this attribute. (LBDB-366)
+Information: Line 90, Cell 'fakeram7_64x192', The cell 'fakeram7_64x192' contiains memory/memory_read/memory_write groups which are deprecated, use the is_memory_cell attribute instead. (LIBG-280)
+Technology library 'fakeram7_64x192' read successfully
+Wrote the 'fakeram7_64x192' library to '/mnt/spr8nfs/XiangShan/pd/synth/fakeram7_64x192.db' successfully
+RM-Info: Done: /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_64x192.db
+RM-Info: Compiling /mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_64x64/fakeram7_64x64.lib -> /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_64x64.db
+Reading '/mnt/spr8nfs/FakeRAM2.0_xs/results_xiangshan/fakeram7_64x64/fakeram7_64x64.lib' ...
+Warning: Line 31, The attribute 'default_input_pin_cap' has already been specified for 'library' at line 29. Using the last definition encountered. (LBDB-261w)
+Warning: Line 1, The 'internal_power_calculation' attribute in char_config group is required for NLPM library. 
+        No default can be applied to this attribute. (LBDB-366)
+Information: Line 90, Cell 'fakeram7_64x64', The cell 'fakeram7_64x64' contiains memory/memory_read/memory_write groups which are deprecated, use the is_memory_cell attribute instead. (LIBG-280)
+Technology library 'fakeram7_64x64' read successfully
+Wrote the 'fakeram7_64x64' library to '/mnt/spr8nfs/XiangShan/pd/synth/fakeram7_64x64.db' successfully
+RM-Info: Done: /mnt/spr8nfs/XiangShan/pd/synth/fakeram7_64x64.db
+# Also copy .v files to synth directory
+foreach lib {
+    fakeram7_8192x64
+    fakeram7_1024x160
+    fakeram7_1024x56
+    fakeram7_1024x7
+    fakeram7_512x308
+    fakeram7_256x24
+    fakeram7_256x16
+    fakeram7_128x230
+    fakeram7_128x100
+    fakeram7_128x50
+    fakeram7_128x40
+    fakeram7_64x192
+    fakeram7_64x64
+} {
+    set v_file ${results_dir}/${lib}/${lib}.v
+    if {[file exists ${v_file}]} {
+        sh cp ${v_file} ${output_dir}/${lib}.v
+        puts "RM-Info: Copied ${lib}.v"
+    }
+}
+RM-Info: Copied fakeram7_8192x64.v
+RM-Info: Copied fakeram7_1024x160.v
+RM-Info: Copied fakeram7_1024x56.v
+RM-Info: Copied fakeram7_1024x7.v
+RM-Info: Copied fakeram7_512x308.v
+RM-Info: Copied fakeram7_256x24.v
+RM-Info: Copied fakeram7_256x16.v
+RM-Info: Copied fakeram7_128x230.v
+RM-Info: Copied fakeram7_128x100.v
+RM-Info: Copied fakeram7_128x50.v
+RM-Info: Copied fakeram7_128x40.v
+RM-Info: Copied fakeram7_64x192.v
+RM-Info: Copied fakeram7_64x64.v
+puts "RM-Info: All XiangShan SRAM libs compiled."
+RM-Info: All XiangShan SRAM libs compiled.
+exit
+Maximum memory usage for this session: 452.60 MB
+CPU usage for this session:      2 seconds (  0.00 hours)
+Elapsed time for this session:      3 seconds (  0.00 hours)
+Thank you for using Library Compiler.
+
