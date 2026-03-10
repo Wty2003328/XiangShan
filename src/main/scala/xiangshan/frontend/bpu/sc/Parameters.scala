@@ -80,7 +80,7 @@ trait HasScParameters extends HasBpuParameters {
   // The value of ctr saturation is 63.
   // If all ctrs are saturated, the corresponding Threshold should be (NumTables * 63) << 4(threshold >> 3 + highConf threshold >> 1)
   def NumTables:    Int = NumPathTables + NumGlobalTables + NumBiasTable + NumBWTables
-  def MinThreshold: Int = (NumTables + 4) << 6
+  def MinThreshold: Int = (NumTables + 5) << 6
   def MaxThreshold: Int = min((NumTables * 63) << 4, (1 << ThresholdWidth) - 1)
 
   def WriteBufferSize: Int = scParameters.WriteBufferSize
