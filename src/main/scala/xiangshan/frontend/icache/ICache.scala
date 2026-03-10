@@ -553,6 +553,7 @@ class ICacheImp(outer: ICache) extends LazyModuleImp(outer) with HasICacheParame
     }
   } else {
     prefetchPipe.io.fromFtq <> DontCare
+    io.prefetch := DontCare
   }
 
   io.pmp(0) <> mainPipe.io.pmp(0)
